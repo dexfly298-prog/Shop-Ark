@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>ARK Mobile v2.0.29 - Ultra Cheap Balm Shop</title>
+  <style>
+    :root {
+      --primary: #fbbf24;
+      --primary-glow: rgba(251, 191, 36, 0.35);
+      --discord: #5865f2;
+      --discord-hover: #4752c4;
+      --bg-dark: #090d16;
+      --bg-card: #111827;
+      --text-main: #f3f4f6;
+      --text-sub: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      padding: 8px;
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .header {
+      text-align: center;
+      padding: 10px 6px;
+      background: linear-gradient(180deg, #1e1b4b 0%, var(--bg-dark) 100%);
+      border-radius: 8px;
+      border: 1px solid #312e81;
+      margin-bottom: 10px;
+      box-shadow: 0 0 12px rgba(49, 46, 129, 0.4);
+    }
+
+    .header h1 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-shadow: 0 0 8px var(--primary-glow);
+    }
+
+    .header p {
+      font-size: 0.65rem;
+      color: #a5b4fc;
+      margin-top: 2px;
+    }
+
+    .category-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 12px 0 6px 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-transform: uppercase;
+    }
+
+    .category-title::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 2px;
+      box-shadow: 0 0 6px var(--primary);
+    }
+
+    .grid-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .item-name {
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .item-role {
+      font-size: 0.6rem;
+      color: var(--text-sub);
+      margin-top: 1px;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .item-price {
+      background: rgba(251, 191, 36, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 800;
+    }
+
+    .btn-buy {
+      background: var(--discord);
+      color: #fff;
+      border: none;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-buy:active {
+      background: var(--discord-hover);
+      transform: scale(0.95);
+    }
+
+    .terms-box {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 0.6rem;
+      color: #64748b;
+      margin-top: 10px;
+    }
+
+    .terms-box h4 {
+      color: var(--primary);
+      font-size: 0.65rem;
+      margin-bottom: 3px;
+    }
+
+    .terms-box ul {
+      padding-left: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>⚡ ARK ULTRA CHEAP BALM SHOP</h1>
+    <p>ARK Mobile v2.0.29 • Crazy Sale (10x Balm)</p>
+  </div>
+
+  <!-- 1. LAND CREATURES -->
+  <div class="category-title">1. Land Creatures (Wild Tameable)</div>
+  <div class="grid-list">
+    <div class="item-card">
+      <div>
+        <div class="item-name">Achatina</div>
+        <div class="item-role">Organic Polymer / Paste</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Achatina', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Allosaurus</div>
+        <div class="item-role">Pack Alpha & Combat</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">4-5 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Allosaurus', '4-5 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Ankylosaurus</div>
+        <div class="item-role">Metal & Flint Harvester</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Ankylosaurus', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Araneo / Arthropleura</div>
+        <div class="item-role">Cave Defense / Armor Melter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1-2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Araneo / Arthropleura', '1-2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Baryonyx</div>
+        <div class="item-role">Cave & Water Stun Mount</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3-4 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Baryonyx', '3-4 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Beaver (Castoroides)</div>
+        <div class="item-role">Wood Harvester & Smithy</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Beaver', '3 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Beelzebufo</div>
+        <div class="item-role">Cementing Paste Harvester</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Beelzebufo', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Brontosaurus</div>
+        <div class="item-role">Mass Berry Harvester</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">4-5 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Brontosaurus', '4-5 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Carnotaurus</div>
+        <div class="item-role">Mid-Tier Land Fighter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Carnotaurus', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Chalicotherium</div>
+        <div class="item-role">Boulder Thrower / Turret</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Chalicotherium', '3 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Compy / Mesopithecus</div>
+        <div class="item-role">Shoulder Pet / Base Alarm</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Compy / Mesopithecus', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Dilo / Dodo</div>
+        <div class="item-role">Starter / Kibble Pair</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Dilo / Dodo', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Diplodocus</div>
+        <div class="item-role">Multi-Seat Transport</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Diplodocus', '3 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Direbear</div>
+        <div class="item-role">Fiber & High Melee Fighter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">4-5 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Direbear', '4-5 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Direwolf</div>
+        <div class="item-role">Cave Explorer / Pack Hunter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3-4 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Direwolf', '3-4 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Doedicurus</div>
+        <div class="item-role">Stone Harvester</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Doedicurus', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Dung Beetle</div>
+        <div class="item-role">Fertilizer & Oil Generator</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Dung Beetle', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Equus / Unicorn</div>
+        <div class="item-role">Mobile Mortar & Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3-5 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Equus / Unicorn', '3-5 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Gallimimus</div>
+        <div class="item-role">Ultra Fast Land Transport</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Gallimimus', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Giganotosaurus</div>
+        <div class="item-role">Apex Land Dominator</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">15-20 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Giganotosaurus', '15-20 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Gigantopithecus</div>
+        <div class="item-role">Yeti Fiber Collector</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">4-5 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Gigantopithecus', '4-5 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Iguanodon</div>
+        <div class="item-role">Infinite Stamina Runner</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1-2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Iguanodon', '1-2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Kairuku</div>
+        <div class="item-role">Organic Polymer Source</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Kairuku', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Lystrosaurus</div>
+        <div class="item-role">XP Boost Companion</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Lystrosaurus', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Megaloceros</div>
+        <div class="item-role">Thatch Harvester & Jumper</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Megaloceros', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Megalosaurus</div>
+        <div class="item-role">Night Time Apex Hunter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">5-6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Megalosaurus', '5-6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Megatherium</div>
+        <div class="item-role">Insect Killer & Chitin</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">5-6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Megatherium', '5-6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Moschops</div>
+        <div class="item-role">Specialized Harvester</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Moschops', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Ovis</div>
+        <div class="item-role">Mutton / Wool Source</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Ovis', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Pachy / Pachyrhino</div>
+        <div class="item-role">Torpor Charge / Gas Mist</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1-2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Pachy / Pachyrhino', '1-2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Paraceratherium</div>
+        <div class="item-role">Mobile Base Platform</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">5-6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Paraceratherium', '5-6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Parasaur</div>
+        <div class="item-role">Radar & Cargo Carrier</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Parasaur', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Procoptodon</div>
+        <div class="item-role">High Jump & Baby Carrier</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">4 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Procoptodon', '4 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Pulmonoscorpius</div>
+        <div class="item-role">Scorpion Torpor Injector</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Pulmonoscorpius', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Purlovia</div>
+        <div class="item-role">Underground Ambush Unit</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Purlovia', '3 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Raptor</div>
+        <div class="item-role">Fast Early Scout</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Raptor', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Rex</div>
+        <div class="item-role">Boss / Raid Heavy Combat</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">7-10 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Rex', '7-10 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Sabertooth</div>
+        <div class="item-role">Hide & Chitin Collector</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Sabertooth', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Spinosaurus</div>
+        <div class="item-role">Heavy Water/Land DPS</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">7-10 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Spinosaurus', '7-10 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Stegosaurus</div>
+        <div class="item-role">Berry & Defense Tank</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Stegosaurus', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Terror Bird</div>
+        <div class="item-role">Gliding Land Fighter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Terror Bird', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Therizinosaur</div>
+        <div class="item-role">Universal Harvester & DPS</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">5-6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Therizinosaur', '5-6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Titanoboa</div>
+        <div class="item-role">Base Defense / Snake</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Titanoboa', '3 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Titanosaur</div>
+        <div class="item-role">Gigantic Siege Base</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">25-30 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Titanosaur', '25-30 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Triceratops</div>
+        <div class="item-role">Early Defense & Berries</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Triceratops', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Troodon</div>
+        <div class="item-role">Night Ambush / Guard</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Troodon', '3 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Woolly Rhino</div>
+        <div class="item-role">Heavy Charge Attack</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">5-6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Woolly Rhino', '5-6 Balm')">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. AIR CREATURES -->
+  <div class="category-title">2. Air Creatures (Wild Tameable)</div>
+  <div class="grid-list">
+    <div class="item-card">
+      <div>
+        <div class="item-name">Argentavis</div>
+        <div class="item-role">Heavy Weight & Smithy</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">5-6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Argentavis', '5-6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Dimorphodon</div>
+        <div class="item-role">Rider Target Attack Pet</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Dimorphodon', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Onyc</div>
+        <div class="item-role">Cave Bat Guard</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1-2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Onyc', '1-2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Pelagornis</div>
+        <div class="item-role">Water Landing & Poly Farm</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Pelagornis', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Pteranodon</div>
+        <div class="item-role">Fast Flyer / Scout</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1-2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Pteranodon', '1-2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Quetzal</div>
+        <div class="item-role">Airborne Fortress</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">10-12 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Quetzal', '10-12 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Royal Griffin</div>
+        <div class="item-role">Dive Bomb & Airborne Combat</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">15-20 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Royal Griffin', '15-20 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Tapejara</div>
+        <div class="item-role">Multi-Passenger / Wall Clinger</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">4-5 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Tapejara', '4-5 Balm')">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEA & WATER CREATURES -->
+  <div class="category-title">3. Sea & Water Creatures (Wild Tameable)</div>
+  <div class="grid-list">
+    <div class="item-card">
+      <div>
+        <div class="item-name">Anglerfish</div>
+        <div class="item-role">Silica Pearl Harvester</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">3-4 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Anglerfish', '3-4 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Basilosaurus</div>
+        <div class="item-role">Shock Immune / Free Oil</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">5-6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Basilosaurus', '5-6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Carbonemys</div>
+        <div class="item-role">Early Tank / Shell</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Carbonemys', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Dunkleosteus</div>
+        <div class="item-role">Oil & Stone Sea Miner</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">5-6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Dunkleosteus', '5-6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Electrophorus</div>
+        <div class="item-role">Electric Eel Guard</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Electrophorus', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Ichthyosaurus</div>
+        <div class="item-role">Fast Ocean Scout</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Ichthyosaurus', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Kaprosuchus</div>
+        <div class="item-role">Swamp Jumper / Grabber</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Kaprosuchus', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Manta</div>
+        <div class="item-role">High Speed Ocean Rider</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Manta', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Megalodon</div>
+        <div class="item-role">Marine Fighter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Megalodon', '2 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Mosasaurus</div>
+        <div class="item-role">Apex Marine Heavy DPS</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">11-15 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Mosasaurus', '11-15 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Plesiosaur</div>
+        <div class="item-role">Deep Sea Cargo / Fighter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">6-8 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Plesiosaur', '6-8 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Sarcosuchus</div>
+        <div class="item-role">Amphibian River Hunter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">2-3 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Sarcosuchus', '2-3 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Tusoteuthis</div>
+        <div class="item-role">Grappler / Pearl Generator</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">12-18 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Tusoteuthis', '12-18 Balm')">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. ITEMS & ACCESSORIES -->
+  <div class="category-title">4. Items (x10 2balm = x15 1balm)</div>
+  <div class="grid-list">
+    <div class="item-card">
+      <div>
+        <div class="item-name">Gold Collar</div>
+        <div class="item-role">Dino Armor Accessory</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">10 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Gold Collar', '10 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Carniv. Pheromone</div>
+        <div class="item-role">Breeding Boost</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Carnivore Pheromone', '6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Herbiv. Pheromone</div>
+        <div class="item-role">Breeding Boost</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">4 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Herbivore Pheromone', '4 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Teddy Bear (Brown)</div>
+        <div class="item-role">Imprint & Comfort</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">6 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Teddy Bear (Brown)', '6 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Teddy Bear (Pink)</div>
+        <div class="item-role">Imprint & Comfort</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">9 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Teddy Bear (Pink)', '9 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Teddy Bear (Black)</div>
+        <div class="item-role">Imprint & Comfort</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">12 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Teddy Bear (Black)', '12 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Toy - Racket</div>
+        <div class="item-role">Dino Play Item</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">7 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Toy - Racket', '7 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Toy - Jump Rope</div>
+        <div class="item-role">Dino Play Item</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">9 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Toy - Jump Rope', '9 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Toy - Yo-yo</div>
+        <div class="item-role">Dino Play Item</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">12 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Toy - Yo-yo', '12 Balm')">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. CHEF STATION KIBBLES -->
+  <div class="category-title">5. Chef Station Kibble (v2.0.29)</div>
+  <div class="grid-list">
+    <div class="item-card">
+      <div>
+        <div class="item-name">Griffin Kibble</div>
+        <div class="item-role">Griffin Taming & Imprint</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 1 Pc</span>
+        <button class="btn-buy" onclick="orderDino('Griffin Kibble', '1 Balm / 1 Pc')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Ankylo Kibble</div>
+        <div class="item-role">Carno Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Ankylo Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Argentavis Kibble</div>
+        <div class="item-role">Spino Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Argentavis Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Bronto Kibble</div>
+        <div class="item-role">Sabertooth Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Bronto Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Carno Kibble</div>
+        <div class="item-role">Direwolf / Bear Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Carno Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Dilo Kibble</div>
+        <div class="item-role">Ankylo / Doedi Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Dilo Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Dodo Kibble</div>
+        <div class="item-role">Pteranodon Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Dodo Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Gallimimus Kibble</div>
+        <div class="item-role">Castoroides Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Gallimimus Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Lystrosaurus Kibble</div>
+        <div class="item-role">Diplodocus Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Lystrosaurus Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Pachy Kibble</div>
+        <div class="item-role">Paracer Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Pachy Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Parasaur Kibble</div>
+        <div class="item-role">Raptor Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Parasaur Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Pelagornis Kibble</div>
+        <div class="item-role">Archaeopteryx Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Pelagornis Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Pteranodon Kibble</div>
+        <div class="item-role">Carbonemys Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Pteranodon Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Pulmonoscorpius Kibble</div>
+        <div class="item-role">Rex / Beelzebufo Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Pulmonoscorpius Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Quetzal Kibble</div>
+        <div class="item-role">Giga / Mosasaurus Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Quetzal Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Raptor Kibble</div>
+        <div class="item-role">Mammoth Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Raptor Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Rex Kibble</div>
+        <div class="item-role">Quetzal Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Rex Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Sarco Kibble</div>
+        <div class="item-role">Stegosaurus Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Sarco Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Spino Kibble</div>
+        <div class="item-role">Megalodon Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Spino Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Stego Kibble</div>
+        <div class="item-role">Argentavis Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Stego Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Therizino Kibble</div>
+        <div class="item-role">Basilosaurus Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Therizino Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Tapejara Kibble</div>
+        <div class="item-role">Allosaurus Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Tapejara Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Terror Bird Kibble</div>
+        <div class="item-role">Woolly Rhino Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Terror Bird Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Titanoboa Kibble</div>
+        <div class="item-role">Dunkleosteus Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Titanoboa Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Trike Kibble</div>
+        <div class="item-role">Sarco Taming</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm / 10 Pcs</span>
+        <button class="btn-buy" onclick="orderDino('Trike Kibble', '1 Balm / 10 Pcs')">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. TEK & EXTRA SERVICES -->
+  <div class="category-title">6. TEK Structures & Services</div>
+  <div class="grid-list">
+    <div class="item-card">
+      <div>
+        <div class="item-name">TEK Generator</div>
+        <div class="item-role">1 Unit Wireless Power</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">35 Balm</span>
+        <button class="btn-buy" onclick="orderDino('TEK Generator', '35 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">TEK Teleporter</div>
+        <div class="item-role">1 Unit Instant Travel</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">20 Balm</span>
+        <button class="btn-buy" onclick="orderDino('TEK Teleporter', '20 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">TEK Kibble Processor</div>
+        <div class="item-role">1 Unit Kibble Converter</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">25 Balm</span>
+        <button class="btn-buy" onclick="orderDino('TEK Kibble Processor', '25 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">TEK Replicator</div>
+        <div class="item-role">1 Unit High-Speed Crafting</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">30 Balm</span>
+        <button class="btn-buy" onclick="orderDino('TEK Replicator', '30 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Element</div>
+        <div class="item-role">100 Units TEK Fuel</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">10 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Element (100 units)', '10 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Eerie Turret</div>
+        <div class="item-role">1 Unit Base Defense</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">10 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Eerie Turret', '10 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Upgrade Level</div>
+        <div class="item-role">Per +60 Levels</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('Upgrade Lvl 60', '1 Balm')">Order</button>
+      </div>
+    </div>
+    <div class="item-card">
+      <div>
+        <div class="item-name">Raw Materials</div>
+        <div class="item-role">3,000 Units Resources</div>
+      </div>
+      <div class="card-footer">
+        <span class="item-price">1 Balm</span>
+        <button class="btn-buy" onclick="orderDino('3k Material', '1 Balm')">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rules -->
+  <div class="terms-box">
+    <h4>📜 Shop Notes:</h4>
+    <ul>
+      <li>Base prices apply to <strong>Level 50-150</strong>.</li>
+      <li>Max level / Mutation: Add <strong>+50% Balm</strong>.</li>
+      <li>3x Balm = Standard price multiplied by 3.</li>
+      <li>Item Category Rate: <strong>x10 2balm = x15 1balm</strong>.</li>
+      <li>Kibble Category: <strong>1 Balm = 10 Pcs</strong> (Except Griffin Kibble: <strong>1 Balm = 1 Pc</strong>).</li>
+      <li>Services: <strong>+60 Levels = 1 Balm</strong> | <strong>3,000 Materials = 1 Balm</strong>.</li>
+    </ul>
+  </div>
+
+  <!-- Webhook Script (Single Prompt Layer) -->
+  <script>
+    const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1536412488332083282/QOtkhN0mp-T4KpAvJZN5eOe5oi8OmEc2dQLx5wPXlEvnCqlj5T2WvPZwuncoueuGAcBE";
+
+    function orderDino(dinoName, price) {
+      // Menggunakan 1 prompt layer tunggal untuk pengisian Nama Player, Server, dan Tribe sekaligus
+      const playerDetails = prompt("Masukkan Info Pemesan (Contoh: Nama IGN / Nama Server / Tribe):");
+      if (!playerDetails || playerDetails.trim() === "") return;
+
+      const payload = {
+        username: "ARK Shop Bot",
+        embeds: [{
+          title: "🛍️ New Order Received!",
+          color: 16500516,
+          fields: [
+            { name: "Item / Dino / Kibble / TEK", value: dinoName, inline: true },
+            { name: "Price", value: price, inline: true },
+            { name: "Player & Server Details", value: playerDetails, inline: false }
+          ],
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      fetch(DISCORD_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      .then(res => {
+        if (res.ok) {
+          alert(`Order for ${dinoName} has been successfully sent to Admin!`);
+        } else {
+          alert("Failed to send order. Please check Discord Webhook status.");
+        }
+      })
+      .catch(err => {
+        alert("A connection error occurred while sending the order.");
+        console.error(err);
+      });
+    }
+  </script>
+
+</body>
+</html>
